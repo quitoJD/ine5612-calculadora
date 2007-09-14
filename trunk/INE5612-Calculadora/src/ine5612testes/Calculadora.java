@@ -66,7 +66,25 @@ public class Calculadora {
      * Se estiver positivo, fica negativo e vice versa
      */
     public void comando_sinal_oposto() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        if (!this.reg1.equals("") && this.operacao == null) {
+
+            // realiza a inversão de sinal
+            if (this.reg1.startsWith("-")) {
+                this.reg1 = this.reg1.replaceFirst("-", "");
+            } else {
+                this.reg1 = "-" + this.reg1;
+            }
+            this.texto_display = this.reg1;
+        } else if (!this.reg2.equals("")) {
+
+            // realiza a inversão de sinal
+            if (this.reg2.startsWith("-")) {
+                this.reg2 = this.reg2.replaceFirst("-", "");
+            } else {
+                this.reg2 = "-" + this.reg2;
+            }
+            this.texto_display = this.reg2;
+        }
     }
 
     public void comando_numerico(int i) {
@@ -139,7 +157,6 @@ public class Calculadora {
             }
         }
     }
-
 
     /**
      * Faz os calculos pendentes, levando em conta os 2 registradores

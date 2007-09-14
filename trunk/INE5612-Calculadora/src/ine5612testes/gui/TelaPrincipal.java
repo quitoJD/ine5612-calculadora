@@ -624,18 +624,22 @@ private void bMmaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
 
 private void bCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCActionPerformed
     this.calculadora.comando_C();
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bCActionPerformed
 
 private void bCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCEActionPerformed
     this.calculadora.comando_CE();
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bCEActionPerformed
 
 private void bBackspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBackspaceActionPerformed
     this.calculadora.comando_Backspace();
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bBackspaceActionPerformed
 
 private void binversao_sinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binversao_sinalActionPerformed
     this.calculadora.comando_sinal_oposto();
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_binversao_sinalActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
