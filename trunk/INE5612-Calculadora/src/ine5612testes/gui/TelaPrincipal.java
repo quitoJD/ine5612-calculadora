@@ -8,6 +8,7 @@ package ine5612testes.gui;
 
 import ine5612testes.Calculadora;
 import ine5612testes.ControlePrincipal;
+import ine5612testes.Operacoes;
 
 /**
  *
@@ -540,55 +541,65 @@ private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:even
 }//GEN-LAST:event_b9ActionPerformed
 
 private void bsomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsomaActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_operacao(Operacoes.SOMA);
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bsomaActionPerformed
 
 private void bsubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsubActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_operacao(Operacoes.SUBTRACAO);
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bsubActionPerformed
 
 private void bmultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmultActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_operacao(Operacoes.MULTIPLICACAO);
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bmultActionPerformed
 
 private void bdivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bdivActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_operacao(Operacoes.DIVISAO);
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bdivActionPerformed
 
 private void bsqrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsqrtActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_raiz();
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bsqrtActionPerformed
 
 private void binversao_valorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binversao_valorActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_inversao();
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_binversao_valorActionPerformed
 
 private void bporcentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bporcentActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_porcento();
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bporcentActionPerformed
 
 private void bigualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bigualActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_igual();
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bigualActionPerformed
 
 private void bvirgulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bvirgulaActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_virgula();
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bvirgulaActionPerformed
 
 private void bMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMCActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_mc();
 }//GEN-LAST:event_bMCActionPerformed
 
 private void bMRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMRActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_mr();
+    this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bMRActionPerformed
 
 private void bMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMSActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_ms();
 }//GEN-LAST:event_bMSActionPerformed
 
 private void bMmaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMmaisActionPerformed
-    // TODO add your handling code here:
+    this.calculadora.comando_mp();
 }//GEN-LAST:event_bMmaisActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b0;
