@@ -243,6 +243,10 @@ public class Calculadora {
     public String getTextoDisplay() {
         return this.texto_display;
     }
+    
+    public String getTextoMemoria() {
+        return this.memoria;
+    }
 
     public String getReg1() {
         return reg1;
