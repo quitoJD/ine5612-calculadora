@@ -20,7 +20,21 @@ public class Calculadora {
     }
 
     public void comando_Backspace() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        
+        String numero;
+        
+        if (!this.reg1.equals("") && this.operacao == null) {
+            // saber qual registrador usar - útil pro inicio da aplicação
+            // aqui usa reg1
+            numero = reg1;
+            reg1 = this.backspace(numero);
+            this.texto_display = reg1;
+        } else if (!reg2.equals("")) {
+            //aqui usa reg2
+            numero = reg2;
+            reg2 = this.backspace(numero);
+            this.texto_display = reg2;
+        }
     }
 
     public void comando_C() {
@@ -42,7 +56,22 @@ public class Calculadora {
      * Faz uma inversão matemática com o número ( 1/x )
      */
     public void comando_inversao() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        if (operacao != null && !reg2.equals("")) {
+            double valor2 = Double.parseDouble(reg2);
+            reg2 = String.valueOf(calculos.inverter(valor2));
+            this.texto_display = reg2;
+        } else {
+            if(operacao != null) {
+                operacao = null;
+                double valor1 = Double.parseDouble(reg1);
+                reg1 = String.valueOf(calculos.inverter(valor1));
+                this.texto_display = reg1;
+            } else {
+                double valor1 = Double.parseDouble(reg1);
+                reg1 = String.valueOf(calculos.inverter(valor1));
+                this.texto_display = reg1;
+            }
+        }
     }
 
     public void comando_MC() {
@@ -203,6 +232,16 @@ public class Calculadora {
 
     public void setReg2(String reg2) {
         this.reg2 = reg2;
+    }
+    
+    public String backspace(String s) {
+        int length = s.length()-1;
+        String temp = s;
+        s = "";
+        for (int i = 0; i < length; i++) {
+            s = s + temp.toCharArray()[i];
+        }
+        return s;
     }
 
     /**
