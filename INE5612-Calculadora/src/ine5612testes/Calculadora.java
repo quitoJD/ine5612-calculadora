@@ -21,7 +21,9 @@ public class Calculadora {
     }
 
     public void comando_igual() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        if (!this.reg2.equals(""))
+            executa_calculo();
+            this.texto_display = reg1;
     }
 
     public void comando_inversao() {
@@ -57,7 +59,15 @@ public class Calculadora {
     }
 
     public void comando_operacao(Operacoes operacao) {
-        this.operacao = operacao;
+        if (this.operacao == null) {
+            this.operacao = operacao;
+        } else if (!this.reg2.equals("")) {
+            this.executa_calculo();
+            this.operacao = operacao;
+            this.texto_display = reg1;
+        } else {
+            this.operacao = operacao;
+        }
     }
 
     public void comando_porcento() {
