@@ -1,4 +1,3 @@
-
 package ine5612testes;
 
 /**
@@ -11,12 +10,9 @@ public class Calculadora {
     private String reg1;
     private String reg2;
     private String memoria;
-    
-    boolean tem_ponto;
 
-    private double comando_numerico;
     private Operacoes operacao;
-
+    private String texto_display;
 
     public Calculadora() {
         this.reg1 = "";
@@ -49,16 +45,17 @@ public class Calculadora {
     }
 
     public void comando_numerico(int i) {
-        
-        if (this.reg1.equals("") && this.operacao == null || this.operacao == null) { // saber qual registrador usar - útil pro inicio da aplicação
-            this.reg1 = this.reg1+(Integer.toString(i));
+
+        if (this.reg1.equals("") && this.operacao == null || this.operacao == null) {
+            // saber qual registrador usar - útil pro inicio da aplicação
+            this.reg1 = this.reg1 + (Integer.toString(i));
             this.texto_display = reg1;
         } else {
-            reg2.concat(Integer.toString(i));
+            this.reg2 = this.reg2 + (Integer.toString(i));
             this.texto_display = reg2;
         }
     }
-    
+
     public void comando_operacao(Operacoes operacao) {
         this.operacao = operacao;
     }
@@ -66,16 +63,25 @@ public class Calculadora {
     public void comando_porcento() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
-    
+
     public void comando_raiz() {
-        
     }
 
     public void comando_virgula() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        if (this.reg1.equals("") && this.operacao == null || this.operacao == null) {
+            // saber qual registrador usar - útil pro inicio da aplicação
+            if (!temPonto(reg1)) {
+                this.reg1 = this.reg1 + ".";
+                this.texto_display = reg1;
+            }
+        } else {
+            if (!temPonto(reg2)) {
+                this.reg1 = this.reg1 + ".";
+                this.texto_display = reg2;
+            }
+        }
     }
 
-    
     public String getTextoDisplay() {
         return this.texto_display;
     }
@@ -95,6 +101,13 @@ public class Calculadora {
     public void setReg2(String reg2) {
         this.reg2 = reg2;
     }
-    
-    
+
+    /**
+     * Verifica a existência ou não de ponto em uma string
+     * @param analisar string a ser analisada
+     * @return true se tiver ponto ou false se não tiver
+     */
+    private boolean temPonto(String analisar) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
 }
