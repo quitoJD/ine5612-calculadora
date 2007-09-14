@@ -20,9 +20,9 @@ public class Calculadora {
     }
 
     public void comando_Backspace() {
-        
+
         String numero;
-        
+
         if (!this.reg1.equals("") && this.operacao == null) {
             // saber qual registrador usar - útil pro inicio da aplicação
             // aqui usa reg1
@@ -73,7 +73,7 @@ public class Calculadora {
             reg2 = String.valueOf(calculos.inverter(valor2));
             this.texto_display = reg2;
         } else {
-            if(operacao != null) {
+            if (operacao != null) {
                 operacao = null;
                 double valor1 = Double.parseDouble(reg1);
                 reg1 = String.valueOf(calculos.inverter(valor1));
@@ -97,8 +97,13 @@ public class Calculadora {
      * Incrementa a memória com o número exibido no console
      */
     public void comando_MP() {
-        double resultado = Double.parseDouble(this.memoria) + Double.parseDouble(this.getTextoDisplay());
-        this.memoria = String.valueOf(resultado);
+        if (!this.reg1.equals("") && this.operacao == null) {
+            double resultado = Double.parseDouble(this.memoria) + Double.parseDouble(this.reg1);
+            this.memoria = String.valueOf(resultado);
+        } else if (!reg2.equals("")) {
+            double resultado = Double.parseDouble(this.memoria) + Double.parseDouble(this.reg2);
+            this.memoria = String.valueOf(resultado);
+        }
     }
 
     /**
@@ -124,8 +129,13 @@ public class Calculadora {
      * Decrementa da memória o número exibido no console
      */
     public void comando_MS() {
-        double resultado = Double.parseDouble(this.memoria) - Double.parseDouble(this.getTextoDisplay());
-        this.memoria = String.valueOf(resultado);
+        if (!this.reg1.equals("") && this.operacao == null) {
+            double resultado = Double.parseDouble(this.memoria) - Double.parseDouble(this.reg1);
+            this.memoria = String.valueOf(resultado);
+        } else if (!reg2.equals("")) {
+            double resultado = Double.parseDouble(this.memoria) - Double.parseDouble(this.reg2);
+            this.memoria = String.valueOf(resultado);
+        }
     }
 
     /**
@@ -255,7 +265,7 @@ public class Calculadora {
     public String getTextoDisplay() {
         return this.texto_display;
     }
-    
+
     public String getTextoMemoria() {
         return this.memoria;
     }
@@ -275,9 +285,9 @@ public class Calculadora {
     public void setReg2(String reg2) {
         this.reg2 = reg2;
     }
-    
+
     public String backspace(String s) {
-        int length = s.length()-1;
+        int length = s.length() - 1;
         String temp = s;
         s = "";
         for (int i = 0; i < length; i++) {
