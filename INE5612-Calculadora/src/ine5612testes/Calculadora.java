@@ -89,7 +89,6 @@ public class Calculadora {
     public void comando_raiz() {
         double resultado = 0.0;
         double valor1 = Double.parseDouble(reg1);
-        double valor2 = Double.parseDouble(reg2);
         if (operacao != null && !reg2.equals("")) {
             executa_calculo();
             resultado = calculos.raiz(valor1);
@@ -98,6 +97,8 @@ public class Calculadora {
                 this.operacao = null;
             }
             resultado = calculos.raiz(valor1);
+            reg1 = String.valueOf(resultado);
+            this.texto_display = reg1;
         }
     }
 
