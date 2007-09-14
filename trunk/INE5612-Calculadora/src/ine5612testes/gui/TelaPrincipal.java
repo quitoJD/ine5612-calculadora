@@ -394,6 +394,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel4.add(b0, gridBagConstraints);
 
         binversao_sinal.setText("+/-");
+        binversao_sinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                binversao_sinalActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
@@ -628,6 +633,10 @@ private void bCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:eve
 private void bBackspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBackspaceActionPerformed
     this.calculadora.comando_Backspace();
 }//GEN-LAST:event_bBackspaceActionPerformed
+
+private void binversao_sinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binversao_sinalActionPerformed
+    this.calculadora.comando_sinal_oposto();
+}//GEN-LAST:event_binversao_sinalActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b0;
