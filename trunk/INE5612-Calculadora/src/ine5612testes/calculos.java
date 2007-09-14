@@ -20,37 +20,37 @@ public class calculos {
     }
 
     //implementação das operações básicas
-    public double somar(double a, double b) {
+    public static double somar(double a, double b) {
         return a + b;
     }
 
-    public double subtrair(double a, double b) {
+    public static double subtrair(double a, double b) {
         return a - b;
     }
 
-    public double multiplicar(double a, double b) {
+    public static double multiplicar(double a, double b) {
         return a * b;
     }
 
-    public double dividir(double a, double b) {
+    public static double dividir(double a, double b) {
         return a / b;
     }
 
-    public double inverter(double a) {
+    public static double inverter(double a) {
         return 1/a;
     }
 
-    public double porcento(double a) {
+    public static double porcento(double a) {
         //requer operação de multiplicação
         return a * 100;
     }
 
-    public double elevar(double a, double b) {
+    public static double elevar(double a, double b) {
         //verificar implementação
         return Math.pow(a, b);
     }
 
-    public double raiz(double a) {
+    public static double raiz(double a) {
         //verificar implementação
         return Math.sqrt(a);
     }
