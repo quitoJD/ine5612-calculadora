@@ -1,4 +1,19 @@
-package ine5612testes;
+/**
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+        
+package ine5612;
 
 /**
  * Classe Controle da Calculadora
@@ -70,17 +85,17 @@ public class Calculadora {
     public void comando_inversao() {
         if (operacao != null && !reg2.equals("")) {
             double valor2 = Double.parseDouble(reg2);
-            reg2 = String.valueOf(calculos.inverter(valor2));
+            reg2 = String.valueOf(Calculos.inverter(valor2));
             this.texto_display = reg2;
         } else {
             if (operacao != null) {
                 operacao = null;
                 double valor1 = Double.parseDouble(reg1);
-                reg1 = String.valueOf(calculos.inverter(valor1));
+                reg1 = String.valueOf(Calculos.inverter(valor1));
                 this.texto_display = reg1;
             } else {
                 double valor1 = Double.parseDouble(reg1);
-                reg1 = String.valueOf(calculos.inverter(valor1));
+                reg1 = String.valueOf(Calculos.inverter(valor1));
                 this.texto_display = reg1;
             }
         }
@@ -198,7 +213,7 @@ public class Calculadora {
         if (operacao != null && !reg2.equals("")) {
             executa_calculo();
             valor1 = Double.parseDouble(reg1);
-            resultado = calculos.porcento(valor1);
+            resultado = Calculos.porcento(valor1);
         }
         reg1 = String.valueOf(resultado);
         this.texto_display = reg1;
@@ -209,12 +224,12 @@ public class Calculadora {
         double valor1 = Double.parseDouble(reg1);
         if (operacao != null && !reg2.equals("")) {
             executa_calculo();
-            resultado = calculos.raiz(valor1);
+            resultado = Calculos.raiz(valor1);
         } else if (!reg1.equals("")) {
             if (operacao != null) {
                 this.operacao = null;
             }
-            resultado = calculos.raiz(valor1);
+            resultado = Calculos.raiz(valor1);
             reg1 = String.valueOf(resultado);
             this.texto_display = reg1;
         }
@@ -246,16 +261,16 @@ public class Calculadora {
         double resultado = 0.0;
 
         if (operacao == Operacoes.SOMA) {
-            resultado = calculos.somar(valor1, valor2);
+            resultado = Calculos.somar(valor1, valor2);
         }
         if (operacao == Operacoes.SUBTRACAO) {
-            resultado = calculos.subtrair(valor1, valor2);
+            resultado = Calculos.subtrair(valor1, valor2);
         }
         if (operacao == Operacoes.MULTIPLICACAO) {
-            resultado = calculos.multiplicar(valor1, valor2);
+            resultado = Calculos.multiplicar(valor1, valor2);
         }
         if (operacao == Operacoes.DIVISAO) {
-            resultado = calculos.dividir(valor1, valor2);
+            resultado = Calculos.dividir(valor1, valor2);
         }
         this.reg1 = String.valueOf(resultado);
         this.reg2 = "";

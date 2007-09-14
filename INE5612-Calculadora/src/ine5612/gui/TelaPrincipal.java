@@ -4,15 +4,15 @@
  * Created on 6 de Setembro de 2007, 19:26
  */
 
-package ine5612testes.gui;
+package ine5612.gui;
 
-import ine5612testes.Calculadora;
-import ine5612testes.ControlePrincipal;
-import ine5612testes.Operacoes;
+import ine5612.Calculadora;
+import ine5612.ControlePrincipal;
+import ine5612.Operacoes;
 
 /**
  *
- * @author  brodock
+ * @author Gabriel, Ramon
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
