@@ -81,6 +81,30 @@ public class Calculadora {
             }
         }
     }
+    
+    /*realiza a operação da memoria, armazenando resultado no reg1 feito isso,
+    o reg2 eh limpado, e o atributo operacao eh setado como null*/
+    private void executa_calculo() {
+        double valor1 = Double.parseDouble(reg1);
+        double valor2 = Double.parseDouble(reg2);
+        double resultado = 0.0;
+                
+        if (operacao == Operacoes.SOMA) {
+            resultado = calculos.somar(valor1, valor2);
+        }
+        if (operacao == Operacoes.SUBTRACAO) {
+            resultado = calculos.subtrair(valor1, valor2);
+        }
+        if (operacao == Operacoes.MULTIPLICACAO) {
+            resultado = calculos.multiplicar(valor1, valor2);
+        }
+        if (operacao == Operacoes.DIVISAO) {
+            resultado = calculos.dividir(valor1, valor2);
+        }
+        this.reg1 = String.valueOf(resultado);
+        this.reg2 = "";
+        this.operacao = null;
+    }
 
     public String getTextoDisplay() {
         return this.texto_display;
