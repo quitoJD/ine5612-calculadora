@@ -38,6 +38,9 @@ public class Calculadora {
         this.texto_display = reg1;
     }
 
+    /**
+     * Faz uma inversão matemática com o número ( 1/x )
+     */
     public void comando_inversao() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -58,6 +61,14 @@ public class Calculadora {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
+    /**
+     * Transforma o sinal do número para o sinal oposto
+     * Se estiver positivo, fica negativo e vice versa
+     */
+    public void comando_sinal_oposto() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
     public void comando_numerico(int i) {
 
         if (this.reg1.equals("") && this.operacao == null || this.operacao == null) {
@@ -70,6 +81,10 @@ public class Calculadora {
         }
     }
 
+    /**
+     * Define qual operação vai ser realizada entre os dois registradores
+     * @param operacao Operação
+     */
     public void comando_operacao(Operacoes operacao) {
         if (this.operacao == null) {
             this.operacao = operacao;
@@ -125,8 +140,12 @@ public class Calculadora {
         }
     }
 
-    /*realiza a operação da memoria, armazenando resultado no reg1 feito isso,
-    o reg2 eh limpado, e o atributo operacao eh setado como null*/
+
+    /**
+     * Faz os calculos pendentes, levando em conta os 2 registradores
+     * e a operação salva na memória. O resultado é salvo no reg1 e
+     * o reg2 é limpo, e o tipo de operação se torna null
+     */
     private void executa_calculo() {
         double valor1 = Double.parseDouble(reg1);
         double valor2 = Double.parseDouble(reg2);
