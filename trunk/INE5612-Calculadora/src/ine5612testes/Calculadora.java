@@ -7,9 +7,14 @@ package ine5612testes;
  */
 public class Calculadora {
 
+    String reg1, reg2, memoria;
+    boolean tem_ponto;
+
     private double comando_numerico;
     private Operacoes operacao;
     private String texto_display;
+    
+    
 
     public Calculadora() {
     }
