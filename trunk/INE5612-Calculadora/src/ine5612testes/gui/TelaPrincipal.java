@@ -24,7 +24,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.ctrPrincipal = ctr;
         this.calculadora = this.ctrPrincipal.getCalculadora();
-        this.campo_memoria.setText("");
+        
     }
 
     /** This method is called from within the constructor to
