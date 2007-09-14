@@ -19,6 +19,18 @@ public class Calculadora {
         this.memoria = "";
     }
 
+    public void comando_Backspace() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void comando_C() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void comando_CE() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
     public void comando_igual() {
         if (!this.reg2.equals("")) {
             executa_calculo();
@@ -30,19 +42,19 @@ public class Calculadora {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    public void comando_mc() {
+    public void comando_MC() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    public void comando_mp() {
+    public void comando_MP() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    public void comando_mr() {
+    public void comando_MR() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    public void comando_ms() {
+    public void comando_MS() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
