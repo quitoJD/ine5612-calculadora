@@ -108,6 +108,7 @@ public class Calculadora {
      * @return true se tiver ponto ou false se não tiver
      */
     private boolean temPonto(String analisar) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        //throw new UnsupportedOperationException("Not yet implemented");
+        return analisar.contains(".");
     }
 }
