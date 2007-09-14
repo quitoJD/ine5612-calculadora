@@ -16,14 +16,36 @@ public class Calculadora {
 
     private double comando_numerico;
     private Operacoes operacao;
-    private String texto_display;
-    
-    
+
 
     public Calculadora() {
         this.reg1 = "";
         this.reg2 = "";
         this.memoria = "";
+    }
+
+    public void comando_igual() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void comando_inversao() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void comando_mc() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void comando_mp() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void comando_mr() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void comando_ms() {
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 
     public void comando_numerico(int i) {
@@ -39,6 +61,18 @@ public class Calculadora {
     
     public void comando_operacao(Operacoes operacao) {
         this.operacao = operacao;
+    }
+
+    public void comando_porcento() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+    
+    public void comando_raiz() {
+        
+    }
+
+    public void comando_virgula() {
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 
     
