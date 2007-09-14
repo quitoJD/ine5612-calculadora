@@ -83,7 +83,15 @@ public class Calculadora {
     }
 
     public void comando_porcento() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        double valor1 = Double.parseDouble(reg1);
+        double resultado = 0;
+        if (operacao != null && !reg2.equals("")) {
+            executa_calculo();
+            valor1 = Double.parseDouble(reg1);
+            resultado = calculos.porcento(valor1);
+        }
+        reg1 = String.valueOf(resultado);
+        this.texto_display = reg1;
     }
 
     public void comando_raiz() {

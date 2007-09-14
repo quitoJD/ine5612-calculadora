@@ -42,7 +42,7 @@ public class calculos {
 
     public static double porcento(double a) {
         //requer operação de multiplicação
-        return a * 100;
+        return a / 100;
     }
 
     public static double elevar(double a, double b) {
