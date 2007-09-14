@@ -86,15 +86,24 @@ public class Calculadora {
         }
     }
 
+    /**
+     * Limpa a memória (iguala a 0)
+     */
     public void comando_MC() {
         this.memoria = "0";
     }
 
+    /**
+     * Incrementa a memória com o número exibido no console
+     */
     public void comando_MP() {
         double resultado = Double.parseDouble(this.memoria) + Double.parseDouble(this.getTextoDisplay());
         this.memoria = String.valueOf(resultado);
     }
 
+    /**
+     * imprime conteúdo da memória no console e atribui valor da memória ao registrador em uso
+     */
     public void comando_MR() {
         if (!this.reg1.equals("") && this.operacao == null) {
             // saber qual registrador usar - útil pro inicio da aplicação
@@ -111,6 +120,9 @@ public class Calculadora {
         }
     }
 
+    /**
+     * Decrementa da memória o número exibido no console
+     */
     public void comando_MS() {
         double resultado = Double.parseDouble(this.memoria) - Double.parseDouble(this.getTextoDisplay());
         this.memoria = String.valueOf(resultado);
