@@ -114,11 +114,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton25" min="-2" max="-2" attributes="0"/>
+                  <Component id="bBackspace" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton26" min="-2" max="-2" attributes="0"/>
+                  <Component id="bCE" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton29" pref="59" max="32767" attributes="0"/>
+                  <Component id="bC" pref="59" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -127,9 +127,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton25" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton26" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton29" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bBackspace" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bCE" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bC" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -137,20 +137,29 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton25">
+        <Component class="javax.swing.JButton" name="bBackspace">
           <Properties>
             <Property name="text" type="java.lang.String" value="Backspace"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bBackspaceActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton26">
+        <Component class="javax.swing.JButton" name="bCE">
           <Properties>
             <Property name="text" type="java.lang.String" value="CE"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCEActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton29">
+        <Component class="javax.swing.JButton" name="bC">
           <Properties>
             <Property name="text" type="java.lang.String" value="C"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -568,6 +577,7 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="textoDisplay">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="horizontalAlignment" type="int" value="4"/>
           </Properties>
         </Component>

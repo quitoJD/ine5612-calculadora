@@ -39,9 +39,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton28 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
+        bBackspace = new javax.swing.JButton();
+        bCE = new javax.swing.JButton();
+        bC = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         bMC = new javax.swing.JButton();
         bMR = new javax.swing.JButton();
@@ -93,11 +93,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGap(0, 38, Short.MAX_VALUE)
         );
 
-        jButton25.setText("Backspace");
+        bBackspace.setText("Backspace");
+        bBackspace.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBackspaceActionPerformed(evt);
+            }
+        });
 
-        jButton26.setText("CE");
+        bCE.setText("CE");
+        bCE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCEActionPerformed(evt);
+            }
+        });
 
-        jButton29.setText("C");
+        bC.setText("C");
+        bC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -105,20 +120,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton25)
+                .addComponent(bBackspace)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton26)
+                .addComponent(bCE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                .addComponent(bC, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton25)
-                    .addComponent(jButton26)
-                    .addComponent(jButton29))
+                    .addComponent(bBackspace)
+                    .addComponent(bCE)
+                    .addComponent(bC))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -424,6 +439,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel4.add(bigual, gridBagConstraints);
 
+        textoDisplay.setEditable(false);
         textoDisplay.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -585,21 +601,34 @@ private void bvirgulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 }//GEN-LAST:event_bvirgulaActionPerformed
 
 private void bMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMCActionPerformed
-    this.calculadora.comando_mc();
+    this.calculadora.comando_MC();
 }//GEN-LAST:event_bMCActionPerformed
 
 private void bMRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMRActionPerformed
-    this.calculadora.comando_mr();
+    this.calculadora.comando_MR();
     this.textoDisplay.setText(this.calculadora.getTextoDisplay());
 }//GEN-LAST:event_bMRActionPerformed
 
 private void bMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMSActionPerformed
-    this.calculadora.comando_ms();
+    this.calculadora.comando_MS();
 }//GEN-LAST:event_bMSActionPerformed
 
 private void bMmaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMmaisActionPerformed
-    this.calculadora.comando_mp();
+    this.calculadora.comando_MP();
 }//GEN-LAST:event_bMmaisActionPerformed
+
+private void bCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCActionPerformed
+    this.calculadora.comando_C();
+}//GEN-LAST:event_bCActionPerformed
+
+private void bCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCEActionPerformed
+    this.calculadora.comando_CE();
+}//GEN-LAST:event_bCEActionPerformed
+
+private void bBackspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBackspaceActionPerformed
+    this.calculadora.comando_Backspace();
+}//GEN-LAST:event_bBackspaceActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b0;
     private javax.swing.JButton b1;
@@ -611,6 +640,9 @@ private void bMmaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
     private javax.swing.JButton b7;
     private javax.swing.JButton b8;
     private javax.swing.JButton b9;
+    private javax.swing.JButton bBackspace;
+    private javax.swing.JButton bC;
+    private javax.swing.JButton bCE;
     private javax.swing.JButton bMC;
     private javax.swing.JButton bMR;
     private javax.swing.JButton bMS;
@@ -625,11 +657,8 @@ private void bMmaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
     private javax.swing.JButton bsqrt;
     private javax.swing.JButton bsub;
     private javax.swing.JButton bvirgula;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
