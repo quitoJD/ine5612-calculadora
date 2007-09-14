@@ -7,7 +7,11 @@ package ine5612testes;
  */
 public class Calculadora {
 
-    String reg1, reg2, memoria;
+    // Memória da Calculadora
+    private String reg1;
+    private String reg2;
+    private String memoria;
+    
     boolean tem_ponto;
 
     private double comando_numerico;
@@ -17,25 +21,46 @@ public class Calculadora {
     
 
     public Calculadora() {
+        this.reg1 = "";
+        this.reg2 = "";
+        this.memoria = "";
     }
 
     public void comando_numerico(int i) {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-    public double getComando_numerico() {
-        return comando_numerico;
-    }
-
-    public void setComando_numerico(double comando_numerico) {
-        this.comando_numerico = comando_numerico;
+        
+        if (this.reg1.equals("") && this.operacao == null || this.operacao == null) { // saber qual registrador usar - útil pro inicio da aplicação
+            this.reg1 = this.reg1+(Integer.toString(i));
+            this.texto_display = reg1;
+        } else {
+            reg2.concat(Integer.toString(i));
+            this.texto_display = reg2;
+        }
     }
     
-    public void appendComando_numerico(int comando_numerico) {
-        this.comando_numerico = this.comando_numerico+comando_numerico;
+    public void comando_operacao(Operacoes operacao) {
+        this.operacao = operacao;
     }
+
     
     public String getTextoDisplay() {
         return this.texto_display;
     }
+
+    public String getReg1() {
+        return reg1;
+    }
+
+    public void setReg1(String reg1) {
+        this.reg1 = reg1;
+    }
+
+    public String getReg2() {
+        return reg2;
+    }
+
+    public void setReg2(String reg2) {
+        this.reg2 = reg2;
+    }
+    
+    
 }
