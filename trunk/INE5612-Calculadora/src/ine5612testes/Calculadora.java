@@ -16,7 +16,7 @@ public class Calculadora {
     public Calculadora() {
         this.reg1 = "";
         this.reg2 = "";
-        this.memoria = "";
+        this.memoria = "0";
     }
 
     public void comando_Backspace() {
@@ -38,11 +38,23 @@ public class Calculadora {
     }
 
     public void comando_C() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        this.operacao = null;
+        this.reg1 = "";
+        this.reg2 = "";
+        this.texto_display = reg1;
     }
 
     public void comando_CE() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        if (!this.reg1.equals("") && this.operacao == null) {
+            // saber qual registrador usar - útil pro inicio da aplicação
+            // aqui usa reg1
+            this.reg1 = "";
+            this.texto_display = reg1;
+        } else if (!reg2.equals("")) {
+            //aqui usa reg2
+            this.reg2 = "";
+            this.texto_display = reg2;
+        }
     }
 
     public void comando_igual() {
@@ -75,19 +87,33 @@ public class Calculadora {
     }
 
     public void comando_MC() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        this.memoria = "0";
     }
 
     public void comando_MP() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        double resultado = Double.parseDouble(this.memoria) + Double.parseDouble(this.getTextoDisplay());
+        this.memoria = String.valueOf(resultado);
     }
 
     public void comando_MR() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        if (!this.reg1.equals("") && this.operacao == null) {
+            // saber qual registrador usar - útil pro inicio da aplicação
+            // aqui usa reg1
+            reg1 = this.memoria;
+            this.texto_display = reg1;
+        } else if (!reg2.equals("")) {
+            //aqui usa reg2
+            reg2 = this.memoria;
+            this.texto_display = reg2;
+        } else {
+            reg1 = this.memoria;
+            this.texto_display = reg1;
+        }
     }
 
     public void comando_MS() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        double resultado = Double.parseDouble(this.memoria) - Double.parseDouble(this.getTextoDisplay());
+        this.memoria = String.valueOf(resultado);
     }
 
     /**
