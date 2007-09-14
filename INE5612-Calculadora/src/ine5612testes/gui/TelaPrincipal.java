@@ -24,6 +24,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.ctrPrincipal = ctr;
         this.calculadora = this.ctrPrincipal.getCalculadora();
+        this.campo_memoria.setText("");
     }
 
     /** This method is called from within the constructor to
@@ -38,6 +39,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton27 = new javax.swing.JButton();
         jButton28 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        campo_memoria = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         bBackspace = new javax.swing.JButton();
         bCE = new javax.swing.JButton();
@@ -70,27 +72,32 @@ public class TelaPrincipal extends javax.swing.JFrame {
         bigual = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         textoDisplay = new javax.swing.JTextField();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
 
         jButton27.setText("jButton27");
 
         jButton28.setText("jButton28");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora");
         setResizable(false);
+
+        campo_memoria.setFont(new java.awt.Font("DejaVu Sans", 1, 15));
+        campo_memoria.setForeground(new java.awt.Color(255, 0, 0));
+        campo_memoria.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        campo_memoria.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 38, Short.MAX_VALUE)
+            .addComponent(campo_memoria, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 38, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(campo_memoria)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         bBackspace.setText("Backspace");
@@ -163,7 +170,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel3.add(bMR, gridBagConstraints);
 
-        bMS.setText("MS");
+        bMS.setText("M-");
         bMS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bMSActionPerformed(evt);
@@ -463,17 +470,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(textoDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jMenu1.setText("Editar");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Exibir");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Ajuda");
-        jMenuBar1.add(jMenu3);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -502,7 +498,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -607,6 +603,7 @@ private void bvirgulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
 private void bMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMCActionPerformed
     this.calculadora.comando_MC();
+    this.campo_memoria.setText(this.calculadora.getTextoMemoria());
 }//GEN-LAST:event_bMCActionPerformed
 
 private void bMRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMRActionPerformed
@@ -616,10 +613,12 @@ private void bMRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:eve
 
 private void bMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMSActionPerformed
     this.calculadora.comando_MS();
+    this.campo_memoria.setText(this.calculadora.getTextoMemoria());
 }//GEN-LAST:event_bMSActionPerformed
 
 private void bMmaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMmaisActionPerformed
     this.calculadora.comando_MP();
+    this.campo_memoria.setText(this.calculadora.getTextoMemoria());
 }//GEN-LAST:event_bMmaisActionPerformed
 
 private void bCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCActionPerformed
@@ -670,12 +669,9 @@ private void binversao_sinalActionPerformed(java.awt.event.ActionEvent evt) {//G
     private javax.swing.JButton bsqrt;
     private javax.swing.JButton bsub;
     private javax.swing.JButton bvirgula;
+    private javax.swing.JLabel campo_memoria;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
