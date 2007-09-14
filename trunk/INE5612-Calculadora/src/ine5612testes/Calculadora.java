@@ -10,7 +10,6 @@ public class Calculadora {
     private String reg1;
     private String reg2;
     private String memoria;
-
     private Operacoes operacao;
     private String texto_display;
 
@@ -21,9 +20,10 @@ public class Calculadora {
     }
 
     public void comando_igual() {
-        if (!this.reg2.equals(""))
+        if (!this.reg2.equals("")) {
             executa_calculo();
-            this.texto_display = reg1;
+        }
+        this.texto_display = reg1;
     }
 
     public void comando_inversao() {
@@ -75,6 +75,18 @@ public class Calculadora {
     }
 
     public void comando_raiz() {
+        double resultado = 0.0;
+        double valor1 = Double.parseDouble(reg1);
+        double valor2 = Double.parseDouble(reg2);
+        if (operacao != null && !reg2.equals("")) {
+            executa_calculo();
+            resultado = calculos.raiz(valor1);
+        } else if (!reg1.equals("")) {
+            if (operacao != null) {
+                this.operacao = null;
+            }
+            resultado = calculos.raiz(valor1);
+        }
     }
 
     public void comando_virgula() {
@@ -91,14 +103,14 @@ public class Calculadora {
             }
         }
     }
-    
+
     /*realiza a operação da memoria, armazenando resultado no reg1 feito isso,
     o reg2 eh limpado, e o atributo operacao eh setado como null*/
     private void executa_calculo() {
         double valor1 = Double.parseDouble(reg1);
         double valor2 = Double.parseDouble(reg2);
         double resultado = 0.0;
-                
+
         if (operacao == Operacoes.SOMA) {
             resultado = calculos.somar(valor1, valor2);
         }
