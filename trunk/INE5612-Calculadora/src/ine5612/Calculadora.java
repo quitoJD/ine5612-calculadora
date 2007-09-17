@@ -196,7 +196,11 @@ public class Calculadora {
      * @param operacao Operação
      */
     public void comando_operacao(Operacoes operacao) {
-        if (this.operacao == null) {
+        if (this.operacao == null && reg1.equals("")) {
+          this.reg1 = "0";
+          this.operacao = operacao;
+          
+        } else if (this.operacao == null) {
             this.operacao = operacao;
         } else if (!this.reg2.equals("")) {
             this.executa_calculo();
